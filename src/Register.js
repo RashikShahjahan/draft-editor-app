@@ -1,16 +1,14 @@
-// Register.js
-
 import React, { useState } from 'react';
 
 function Register({ onRegister }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [inviteCode, setInviteCode] = useState(''); // New state for invite code
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // You would replace this URL with the URL to your registration API
       const response = await fetch('http://localhost:8000/register', {
         method: 'POST',
         headers: {
@@ -20,6 +18,7 @@ function Register({ onRegister }) {
           username,
           email,
           password,
+          invite_code: inviteCode, // Include invite code in the request
         }),
       });
 
@@ -27,13 +26,13 @@ function Register({ onRegister }) {
       if (response.ok) {
         onRegister(data);
       } else {
-        // Handle errors, e.g. show an error message
         console.error('Registration failed:', data.detail);
       }
     } catch (error) {
       console.error('There was an error registering:', error);
     }
   };
+
 
   return (
     <div className="form-container">
@@ -61,6 +60,15 @@ function Register({ onRegister }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <div className="form-field">
+          <label className="form-label">Invite Code:</label>
+          <input
+            type="text"
+            value={inviteCode}
+            onChange={(e) => setInviteCode(e.target.value)}
+          />
+        </div>
+
         </div>
         <div className="form-action">
           <button className="form-button" type="submit">Register</button>

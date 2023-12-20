@@ -10,7 +10,7 @@ function Login({ onLogin }) {
     event.preventDefault();
     try {
       // You would replace this URL with the URL to your authentication API
-      const response = await fetch('http://localhost:8000/token', {
+      const response = await fetch('https://localhost:8000/token', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',

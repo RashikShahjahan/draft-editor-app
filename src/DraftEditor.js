@@ -5,7 +5,7 @@ import 'react-quill/dist/quill.snow.css'; // ES6
 
 const DraftEditor = () => {
   const [draft, setDraft] = useState('');
-  const apiBaseUrl = 'http://localhost:8000'; // Replace with your actual API base URL
+  const apiBaseUrl = 'https://localhost:8000'; // Replace with your actual API base URL
 
   useEffect(() => {
     const fetchDraft = async () => {

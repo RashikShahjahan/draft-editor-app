@@ -39,6 +39,7 @@ const DraftEditor = () => {
 return (
     <div>
         <h1>খুদ্র গপ্পো </h1>
+        <p>Verify the story below and hit submit. Only fix grammatical and logical errors. These stories will be used to build the Bengali equivalent of https://huggingface.co/datasets/roneneldan/TinyStories </p>
         <ReactQuill value={draft} onChange={handleEditorChange} />
         <button onClick={publishDraft}>Publish Draft</button>
     </div>

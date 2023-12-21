@@ -9,7 +9,7 @@ function Register({ onRegister }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('https://localhost:8000/register', {
+      const response = await fetch('https://banglallm.rashik.sh/api/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -18,7 +18,7 @@ function Register({ onRegister }) {
           username,
           email,
           password,
-          invite_code: inviteCode, // Include invite code in the request
+          inviteCode // Include invite code in the request
         }),
       });
 

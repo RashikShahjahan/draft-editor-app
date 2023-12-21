@@ -10,7 +10,7 @@ function Login({ onLogin }) {
     event.preventDefault();
     try {
       // You would replace this URL with the URL to your authentication API
-      const response = await fetch('https://banglallm.rashik.sh/api/', {
+      const response = await fetch('https://banglallm.rashik.sh/api', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',

@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 function Register({ onRegister }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
   const [inviteCode, setInviteCode] = useState(''); // New state for invite code
 
   const handleSubmit = async (event) => {
@@ -16,7 +15,6 @@ function Register({ onRegister }) {
         },
         body: JSON.stringify({
           username,
-          email,
           password,
           inviteCode // Include invite code in the request
         }),
@@ -43,14 +41,6 @@ function Register({ onRegister }) {
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className="form-field">
-          <label className="form-label">Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="form-field">
